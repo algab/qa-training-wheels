@@ -1,6 +1,6 @@
 describe "Mouse Hover" do
   before(:each) do
-    visit "https://training-wheels-protocol.herokuapp.com/hovers"
+    visit "/hovers"
   end
 
   it "Image blade" do

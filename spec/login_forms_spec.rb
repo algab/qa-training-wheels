@@ -1,6 +1,6 @@
 describe "Login Forms" do
   it "Login successful" do
-    visit "https://training-wheels-protocol.herokuapp.com/login"
+    visit "/login"
     
     find("#userId").set "stark"
     find("#passId").set "jarvis!"
@@ -12,7 +12,7 @@ describe "Login Forms" do
   end
 
   it "User not found" do
-    visit "https://training-wheels-protocol.herokuapp.com/login"
+    visit "/login"
 
     find("#userId").set "steve"
     find("#passId").set "jarvis!"
@@ -24,7 +24,7 @@ describe "Login Forms" do
   end
 
   it "Password is wrong" do
-    visit "https://training-wheels-protocol.herokuapp.com/login"
+    visit "/login"
 
     find("#userId").set "stark"
     find("#passId").set "jarvis"

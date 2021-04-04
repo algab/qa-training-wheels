@@ -1,6 +1,6 @@
 describe "Login 2", :login2 do
   before(:each) do
-    visit "https://training-wheels-protocol.herokuapp.com/login2"
+    visit "/login2"
   end
 
   it "Login with birthdate" do    
@@ -9,12 +9,12 @@ describe "Login 2", :login2 do
 
     login_form = find("#login")
 
-    case login_form
+    case login_form.text
     when /Dia/
       find("#day").set "29"
     when /Mês/
       find("#month").set "05"
-    else /Ano/
+    when /Ano/
       find("#year").set "1970"
     end
 

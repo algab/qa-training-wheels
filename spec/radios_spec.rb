@@ -1,6 +1,6 @@
 describe "Radios Button" do
   before(:each) do
-    visit "https://training-wheels-protocol.herokuapp.com/radios"
+    visit "/radios"
   end
   
   it "Select by id" do
