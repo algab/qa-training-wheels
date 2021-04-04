@@ -14,9 +14,19 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.include Capybara::DSL
+
+  config.before(:example) do
+    page.current_window.resize_to(1024,882)
+  end
+
+  config.after(:example) do |e|
+    name = e.description.gsub(/[^A-Za-z0-9 ]/, "").tr(" ", "_")
+    page.save_screenshot("logs/" + name + ".png") if e.exception
+  end  
 end
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome
   config.default_max_wait_time = 5
+  config.app_host = "https://training-wheels-protocol.herokuapp.com"
 end
